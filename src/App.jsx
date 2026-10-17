@@ -1,25 +1,20 @@
 import { useState } from 'react'
 import Login from './components/Login'
+import Cadastro from './components/Cadusuario'
 
 function App() {
   const [tela, setTela] = useState("");
   const defineTela = (novaTela) => {
     setTela(novaTela);
   };
-  // setUser(sessionStorage.getItem("usuario"))
-  // console.log(user)
-  // if (user != ""){
-  //   console.log("funfou!!!")
-  // }
-  // useEffect(() => {
-  //   App();
-  // },[user])
   return (
     <>
-      {tela ? (
-      <p>hello world!</p>
+      {tela === "cadastro" ? (
+        <Cadastro escolheTela={defineTela} />
+      ): tela === "principal" ? (
+        <p>Hello World!</p>
       ):(
-      <Login escolheTela={defineTela}/>
+        <Login escolheTela={defineTela}/>
       )}
     </>
   )
