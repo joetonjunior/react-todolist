@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Login from './components/Login'
 import Cadastro from './components/Cadusuario'
+import Cards from './components/Principal'
 
 function App() {
   const [tela, setTela] = useState("");
@@ -12,7 +13,7 @@ function App() {
       {tela === "cadastro" ? (
         <Cadastro escolheTela={defineTela} />
       ): tela === "principal" ? (
-        <p>Hello World!</p>
+        <Cards escolheTela={defineTela} />
       ):(
         <Login escolheTela={defineTela}/>
       )}
